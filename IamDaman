@@ -1,0 +1,42 @@
+const NFTs = [] // Declares an empty array named NFTs to hold NFTs.
+
+function mintNFT (name,eyecolor,age,gender) { //Declares a function named mintNFT which takes four parameters: name, eyecolor, age, and gender.
+
+    const NFT = { //  Creates an object named NFT with properties name, eyecolor, age, and gender, using the provided parameters.
+    
+        "name": name,
+        "eyecolor": eyecolor,
+        "age": age,
+        "gender": gender,
+    }
+// Adds the newly created NFT object to the NFTs array.
+    NFTs.push(NFT);
+// Logs a message to the console indicating that an NFT with the specified name has been minted.
+    console.log("Minted: " + name);
+
+}
+//  Declares a function named listNFTs to display details of all minted NFTs.
+function listNFTs(){    
+    for(let i=0; i < NFTs.length; i++){ // Iterates over the NFTs array to display details of each NFT.
+    // Logs the Id, name, eyecolor, age, and gender of the NFT
+        console.log("\nID: " + (i + 1));
+        console.log("Name: " + NFTs[i].name);
+        console.log("EyeColor: " + NFTs[i].eyecolor);
+        console.log("Age: " + NFTs[i].age);
+        console.log("Gender: " + NFTs[i].gender);
+        
+    }
+}
+//  Declares a function named getTotalSupply to print the total number of minted NFTs.
+function getTotalSupply(){
+    console.log("\n" + NFTs.length); // Logs the total number of minted NFTs.
+}
+
+//calling the functions
+mintNFT("ziven", "Black","24", "Male");
+mintNFT("gab", "Brown","23", "Male");
+mintNFT("ravven", "Black","23", "Male");
+mintNFT("shin", "Black","20", "Male");
+mintNFT("nigel", "Blue","19", "Male");
+listNFTs();
+getTotalSupply();
